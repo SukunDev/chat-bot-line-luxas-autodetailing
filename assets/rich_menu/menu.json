@@ -1,0 +1,71 @@
+{
+  "size": {
+    "width": 2500,
+    "height": 1686
+  },
+  "selected": false,
+  "name": "Rich Menu",
+  "chatBarText": "Menu",
+  "areas": [
+    {
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1650,
+        "height": 843
+      },
+      "action": {
+        "type": "postback",
+        "data": "menu_list_product"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1650,
+        "y": 0,
+        "width": 825,
+        "height": 843
+      },
+      "action": {
+        "type": "postback",
+        "data": "menu_rekomendasi"
+      }
+    },
+    {
+      "bounds": {
+        "x": 0,
+        "y": 843,
+        "width": 825,
+        "height": 843
+      },
+      "action": {
+        "type": "postback",
+        "data": "menu_cara_memesan"
+      }
+    },
+    {
+      "bounds": {
+        "x": 825,
+        "y": 843,
+        "width": 825,
+        "height": 843
+      },
+      "action": {
+        "type": "postback",
+        "data": "menu_riwayat"
+      }
+    },
+    {
+      "bounds": {
+        "x": 1650,
+        "y": 843,
+        "width": 825,
+        "height": 843
+      },
+      "action": {
+        "type": "postback",
+        "data": "menu_tentang"
+      }
+    }
+  ]
+}
