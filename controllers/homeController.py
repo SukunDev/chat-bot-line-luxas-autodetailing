@@ -1,6 +1,6 @@
 import sys
-from flask import render_template
+from flask import jsonify
 
 
 def index():
-    return render_template('index.html')
+    return jsonify({"status": True, "message": "Line Chat Bot Is Ready"})

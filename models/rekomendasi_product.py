@@ -1,22 +1,24 @@
 from . import db
 from datetime import datetime
 
-class Setting(db.Model):
-    __tablename__ = 'settings'
+class RekomendasiProduct(db.Model):
+    __tablename__ = 'rekomendasi_products'
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    name = db.Column(db.String(255), unique=True, nullable=False)
-    value = db.Column(db.Text)
+    product_id = db.Column(db.Integer, db.ForeignKey('products.id'), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.now())
 
+    product = db.relationship('Product', backref='products', uselist=False)
+
     def __repr__(self) -> str:
-        return f"<Setting(id='{self.id}', name='{self.name}')>"
+        return f"<RekomendasiProduct(id='{self.id}', product_id='{self.product_id}')>"
 
     @property
     def serialize(self):
         return {
             'id': self.id,
-            'name': self.name,
-            'value': self.value,
+            'product_id': self.product_id,
             'created_at': self.created_at.strftime('%Y-%m-%d %H:%M:%S')
         }
+
+

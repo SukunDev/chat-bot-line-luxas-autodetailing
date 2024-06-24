@@ -29,7 +29,7 @@ class Line:
         }, headers=headers)
         if response.status_code != 200:
             raise ReplyMessageError("Failed while try reply message")
-        return response.json()['sendMessages'][0]
+        return response.json()['sentMessages'][0]
     
     def _send_flex_message(self, user_id, text, data):
         headers = {

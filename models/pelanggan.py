@@ -6,7 +6,7 @@ class Pelanggan(db.Model):
     __tablename__ = 'pelanggan'
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    line_user_id = db.Column(db.String(255), unique=True, nullable=False)
+    line_user_id = db.Column(db.Integer, db.ForeignKey('line_users.id'), nullable=False)
     name = db.Column(db.String(255))
     no_hp = db.Column(db.String(255))
     alamat = db.Column(db.String(255))
@@ -16,6 +16,8 @@ class Pelanggan(db.Model):
     rt = db.Column(db.String(255))
     rw = db.Column(db.String(255))
     created_at = db.Column(db.DateTime, default=datetime.now())
+
+    
 
     def __repr__(self) -> str:
         return f"<Pelanggan(id='{self.id}', name='{self.name}')>"

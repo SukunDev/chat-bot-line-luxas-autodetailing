@@ -12,6 +12,9 @@ class LineUser(db.Model):
     last_action = db.Column(db.Text)
     created_at = db.Column(db.DateTime, default=datetime.now())
 
+    pelanggan = db.relationship('Pelanggan', backref='pelanggan', uselist=False)
+    transaksi = db.relationship('Transaksi', backref='transaksi')
+
     def __repr__(self) -> str:
         return f"<LineUser(id='{self.id}', display_name='{self.display_name}')>"
 

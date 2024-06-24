@@ -39,8 +39,8 @@
         "height": 843
       },
       "action": {
-        "type": "postback",
-        "data": "menu_cara_memesan"
+        "type": "message",
+        "text": "cara memesan"
       }
     },
     {
@@ -63,8 +63,8 @@
         "height": 843
       },
       "action": {
-        "type": "postback",
-        "data": "menu_tentang"
+        "type": "message",
+        "text": "tentang kami"
       }
     }
   ]
