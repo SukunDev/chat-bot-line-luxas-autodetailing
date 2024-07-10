@@ -9,7 +9,7 @@ class Product(db.Model):
     thumbnail = db.Column(db.String(255))
     description = db.Column(db.String(255))
     price = db.Column(db.Integer)
-    created_at = db.Column(db.DateTime)
+    created_at = db.Column(db.DateTime, default=datetime.now())
 
     def __repr__(self) -> str:
         return f"<Product(id='{self.id}', name='{self.name}')>"
@@ -19,5 +19,8 @@ class Product(db.Model):
         return {
             'id': self.id,
             'name': self.name,
+            'thumbnail': self.thumbnail,
+            'description': self.description,
+            'price': self.price,
             'created_at': self.created_at.strftime('%Y-%m-%d %H:%M:%S')
         }

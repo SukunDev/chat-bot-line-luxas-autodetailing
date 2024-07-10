@@ -45,18 +45,24 @@ flask db upgrade
 <img src="assets/database_mysql.png" width="90%">
 <p>
 
-batu anda dapat melakuka input keyword secara manual atau menggunakan api yang sudah saya siapkan
+baru anda dapat melakukan input keyword secara manual atau menggunakan api yang sudah saya siapkan
 
 ```
 POST /api/keywords/create HTTP/1.1
 Host: localhost:5000
-Content-Type: application/json
-Content-Length: 85
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Length: 262
 
-{
-    "keywords": "Halo",
-    "answer": "Halo kak, ada hal yang bisa saya bantu"
-}
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="keywords"
+
+apakabar
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="answer"
+
+Baik, ada hal yang bisa saya bantu
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
 ```
 
 <p align="center">
@@ -101,6 +107,7 @@ FLASK_DATABASE_PORT=3306
 FLASK_LINE_SECRET=
 FLASK_LINE_ACCESS_TOKEN=
 
+FLASK_URL=
 ```
 
 dan setup webhook dengan fowarding address anda dengan endpoints /webhook

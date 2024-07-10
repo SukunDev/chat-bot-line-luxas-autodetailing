@@ -1,5 +1,5 @@
-from flask import Flask
-from models import db, LineUser, Keyword
+from flask import Flask, send_from_directory
+from models import db
 from flask_migrate import Migrate
 
 
@@ -17,3 +17,7 @@ migrate = Migrate(app, db)
 app.register_blueprint(home_bp, url_prefix='/')
 app.register_blueprint(webhook_bp, url_prefix='/webhook')
 app.register_blueprint(api_bp, url_prefix='/api')
+
+@app.route('/assets/<path:filename>')
+def assets(filename):
+    return send_from_directory('assets', filename)

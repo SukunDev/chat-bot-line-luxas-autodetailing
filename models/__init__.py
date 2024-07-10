@@ -4,7 +4,6 @@ db = SQLAlchemy()
 
 from .line_user import LineUser
 from .keyword import Keyword
-from .rich_menu import RichMenu
 from .product import Product
 from .rekomendasi_product import RekomendasiProduct
 from .pelanggan import Pelanggan

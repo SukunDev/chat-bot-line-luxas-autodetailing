@@ -18,6 +18,7 @@ class RekomendasiProduct(db.Model):
         return {
             'id': self.id,
             'product_id': self.product_id,
+            'product': self.product.serialize,
             'created_at': self.created_at.strftime('%Y-%m-%d %H:%M:%S')
         }
 
